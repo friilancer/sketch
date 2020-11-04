@@ -1,8 +1,12 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup } from '@testing-library/react';
 import App from './App';
+import React from 'react';
+import ReactDom from 'react-dom'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+afterEach(cleanup);
+
+test('it renders without crashing', () => {
+	const div = document.createElement('div');
+	ReactDom.render(<App />, div);
+	ReactDom.unmountComponentAtNode(div);
+})

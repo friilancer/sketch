@@ -1,0 +1,48 @@
+.canvas{
+  border: 1px solid black;
+  height: 500px;
+  width: 500px;
+}
+
+.mainDiagram{
+  height: 500px;
+  width: 500px;
+}
+
+.strokeAnimation{
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 500;
+  animation: anime 3s linear forwards
+}
+
+@keyframes anime {
+  0%{
+    stroke-dashoffset: 500;
+    stroke: black;
+  }
+
+  40%{
+    stroke-dashoffset: 1500;
+    fill: transparent;
+  }
+
+  80%{
+    stroke-dashoffset: 4000;
+  }
+
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+.miniDiagram{
+  height: 30px;
+  width: 30px;
+}
+
+.minicanvas{
+  height: 30px;
+  width: 30px;
+  margin: 10px 0;
+}
+

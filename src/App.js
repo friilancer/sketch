@@ -1,23 +1,36 @@
-import logo from './logo.svg';
+import React, { useState, useEffect } from 'react';
 import './App.css';
+import ShapePicker from './components/shapePicker/shapePicker';
+import { ShapeCanvas } from './components/shapeCanvas/shapeCanvas';
 
-function App() {
+
+const App = () => {
+    
+  const [shapesHistory, setShapesHistory] = useState([]);
+
+  useEffect(() => {
+    const getShapes = JSON.parse(localStorage.getItem('shapes'));
+
+    getShapes ? setShapesHistory([...getShapes]) : setShapesHistory([]);
+  }, [])
+
+  useEffect(() =>  {
+
+    localStorage.setItem('shapes', JSON.stringify(shapesHistory));
+
+  }, [shapesHistory])
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout"> 
+      <ShapePicker
+        shapesHistory={shapesHistory}
+        drawnShape = {(newShape) => setShapesHistory(newShape)}
+      
+      />
+      <ShapeCanvas 
+        shapesHistory={shapesHistory[0]}
+      />      
     </div>
   );
 }

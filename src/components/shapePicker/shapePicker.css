@@ -1,0 +1,30 @@
+.controller{
+  background: #E8E8E8;
+  display: grid;
+  grid-template-rows: auto 1fr 1fr;
+  padding: 10px;
+}
+
+.drawnShapesDisplay{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  background-color: #E8E8E8;
+}
+
+button{
+  display: block;
+  padding: 5px 15px;
+  margin: 20px 0;
+  border: 1px solid black
+}
+
+label{
+  display: block;
+  margin-top: 10px;
+}
+
+select, input{
+  padding: 5px;
+  padding-right: 25px;
+  border: 1px solid black
+}

@@ -1,0 +1,9 @@
+.canvasheet{
+  display: grid; 
+  grid-template-rows: auto 1fr;
+  justify-items: center;
+}
+
+.text-center{
+	text-align: center;
+}
