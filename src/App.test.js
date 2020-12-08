@@ -5,7 +5,7 @@ import ReactDom from 'react-dom'
 
 afterEach(cleanup);
 
-test('it renders without crashing', () => {
+test('Application renders without crashing', () => {
 	const div = document.createElement('div');
 	ReactDom.render(<App />, div);
 	ReactDom.unmountComponentAtNode(div);

@@ -6,14 +6,19 @@ import { ShapeCanvas } from './components/shapeCanvas/shapeCanvas';
 
 const App = () => {
     
+  //Instantiate empty array that'll contain data of shapes drawn
   const [shapesHistory, setShapesHistory] = useState([]);
 
+  //When the application mounts, load previously drawn shapes if any
   useEffect(() => {
     const getShapes = JSON.parse(localStorage.getItem('shapes'));
 
     getShapes ? setShapesHistory([...getShapes]) : setShapesHistory([]);
   }, [])
 
+  
+
+  //Update shapes drawn on localStorage
   useEffect(() =>  {
 
     localStorage.setItem('shapes', JSON.stringify(shapesHistory));
@@ -25,8 +30,7 @@ const App = () => {
     <div className="layout"> 
       <ShapePicker
         shapesHistory={shapesHistory}
-        drawnShape = {(newShape) => setShapesHistory(newShape)}
-      
+        drawnShape = {(newShape) => setShapesHistory(newShape)}      
       />
       <ShapeCanvas 
         shapesHistory={shapesHistory[0]}

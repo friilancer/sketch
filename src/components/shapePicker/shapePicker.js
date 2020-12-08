@@ -16,6 +16,7 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
       radius: false
     })
 
+    //Toggle input on forms to be shown based on selected shape
     const toggle = (shape) => {
       if(shape === 'square') setDimensions({
         length : true,
@@ -45,6 +46,7 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
       toggle(e.target.value);
     }
 
+    //Reset values to defaults after a shape has been drawn
     const reset = (shape) => {
       setShape(shape);
       toggle(shape);
@@ -54,6 +56,19 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
       setColor('#000000'); 
     }
 
+    const updateShapes = (shape, length, breadth, radius, color) => {
+        drawnShape([{
+          shape,
+          length,
+          breadth,
+          radius,
+          color
+          },
+          ...shapesHistory
+        ]);
+    }
+
+    const clearShapes = () => drawnShape([]);
     const onSubmit = (e) => {
 
       e.preventDefault();
@@ -142,6 +157,7 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
 
           <button> DRAW </button>
         </form>
+        <button className="clear" onClick={clearShapes}> Clear shapes history </button>
 
         <div>
           {!shapesHistory[0] ? <h5> You are yet to draw any shape </h5> : 
@@ -173,6 +189,7 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
         </div>
 
       </div>
+
     </>
     );
 }

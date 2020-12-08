@@ -1,6 +1,8 @@
 import React from 'react';
 import './shapes.css'
 
+
+//Circle component
 export const Circle = ({radius, color}) => {
 
   if(radius > 250) radius = 250;
@@ -16,7 +18,8 @@ export const Circle = ({radius, color}) => {
   );
 }
 
-export const MiniCircle = ({color}) => {
+//Mock circle component
+export const MiniCircle = ({radius, color}) => {
   return (
         <div data-testid="miniCircle" className="minicanvas">
           <svg className="miniDiagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -28,6 +31,7 @@ export const MiniCircle = ({color}) => {
   );
 }
       
+//Square component  
 export const Square = ({length, color}) => { 
 
   if(length > 500) length = 450;
@@ -43,7 +47,8 @@ export const Square = ({length, color}) => {
   );
 }
 
-export const MiniSquare = ({color}) => { 
+//Mock square component
+export const MiniSquare = ({length, color}) => { 
   return (
         <div data-testid="miniSquare" className="minicanvas">
           <svg className="miniDiagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
@@ -55,6 +60,7 @@ export const MiniSquare = ({color}) => {
   );
 }
 
+//Rectangle component 
 export const Rectangle = ({length, breadth, color}) => {
 
   if(length > 500 || breadth > 500){
@@ -82,7 +88,8 @@ export const Rectangle = ({length, breadth, color}) => {
   );  
 }
 
-export const MiniRectangle = ({color}) => {
+//Mock rectangle component
+export const MiniRectangle = ({color, length, breadth }) => {
   return (
         <div data-testid="miniRectangle" className="minicanvas">
           <svg className="miniDiagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30">
