@@ -15,12 +15,17 @@ button{
   display: block;
   padding: 5px 15px;
   margin: 20px 0;
-  border: 1px solid black
+  border: 1px solid black;
+  cursor:  pointer; 
+
 }
 
+.draw{
+  background: #555;
+}
 .clear{
   max-width: 180px;
-  cursor:  pointer; 
+  background: red; 
 }
 
 label{

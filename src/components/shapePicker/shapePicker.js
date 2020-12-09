@@ -155,7 +155,7 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
           />
         </div>
 
-          <button> DRAW </button>
+          <button className="draw"> Draw </button>
         </form>
         <button className="clear" onClick={clearShapes}> Clear shapes history </button>
 

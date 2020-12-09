@@ -4,3 +4,11 @@
   grid-template-rows: 100vh;
   max-width: 1500px;
 }
+
+.errorDisplay{
+	display: grid;
+	grid-template-columns: 100vw;
+	grid-template-rows: 100vh;
+	place-items: center ;
+	background: #777;
+}
