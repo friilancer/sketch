@@ -56,18 +56,6 @@ const ShapePicker = ({shapesHistory, drawnShape}) => {
       setColor('#000000'); 
     }
 
-    const updateShapes = (shape, length, breadth, radius, color) => {
-        drawnShape([{
-          shape,
-          length,
-          breadth,
-          radius,
-          color
-          },
-          ...shapesHistory
-        ]);
-    }
-
     const clearShapes = () => drawnShape([]);
     const onSubmit = (e) => {
 

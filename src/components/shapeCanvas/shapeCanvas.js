@@ -21,7 +21,7 @@ export const ShapeCanvas = ({shapesHistory = {
         radius > 250 || length > 500 || breadth > 500 ? 
         <h6> Your drawing seems to have exceeded our canvas...scaled it perfectly for you </h6> : '' 
       }
-      <h3>Draw something</h3>
+      <h3>CANVAS</h3>
       </div>
       {shape === 'circle' && <Circle radius={radius} color={color} />}
       {shape === 'square' && <Square length={length} color={color} />}
